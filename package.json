@@ -1,0 +1,17 @@
+{
+  "name": "fortintae.me",
+  "version": "1.0.0",
+  "description": "fortinateTracker",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "IslamTolba",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "fortnite-api-io": "^1.8.0",
+    "hbs": "^4.1.1"
+  }
+}
