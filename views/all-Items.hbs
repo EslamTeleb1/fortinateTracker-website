@@ -4,26 +4,75 @@
 <html lang="ar">
 <head>
 
+
+
+    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
 <meta name="msapplication-navbutton-color" content="#080808">
 <meta name="theme-color" content="#080808">
-<meta name="description" content="View information about the %name% item in locker." />
-<meta property="twitter:card" content="summary">
-<meta property="twitter:site" content="trackernetwork">
-<meta property="og:url" content="https://fortnitetracker.com/locker/5206/venturion">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fortnite Tracker Locker - Venturion">
-<meta property="og:description" content="Aventure awaits!" />
-<link rel="stylesheet" type="text/css" href="../cs/main.min.css">
-<title id='name'>
-  loading… - Fortnite Tracker
+<meta name="description" content="Fortnite all Item Shop, see what is in the Fortnite UPCOMING, Shop history, Skins and cosmetics!" />
+<link rel="canonical" href="https://freev-buck.com/shop" />
+<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+<style>
+
+
+
+
+        .fortnite-db-item__name, .burbank {
+            font-family: burbank-big;
+        }
+        @media(min-width:50px) {
+            h1 + p {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .db-store-grid-big {
+                grid-template-columns: repeat(6, 1fr) !important;
+            }
+        }
+        
+
+    </style>
+    <style>
+        .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.loadMore {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+.loadMore:hover {
+  background-color: #555555;
+  color: white;
+}
+    </style>
+<title>
+    Fortnite all Item Shop - Today's UPCOMING - Cosmetics and Skins
 </title>
 
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
 <link href="https://use.typekit.net/grx5lri.css" rel="stylesheet">
 <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" />
-<link href="./cs/main.min.css?v=637400277473529037" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="./cs/main.min.css">
 <style>
         [v-cloak] > * {
             display: none
@@ -33,10 +82,12 @@
             content: "loading…"
         }
     </style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
-<body class="trn-site  ">
+<body class="trn-site">
 <script type="text/template" id="search-box-template">
     <div class="search-box" v-on:click.stop>
         <ul class="platforms">
@@ -65,10 +116,9 @@
                    v-on:click="historyShown = true">
         </form>
         <div v-if="historyShown" class="history">
-            <nav>
+            <nav style=" position: relative">
                 <ul>
-                    <li :class="{ active: currentGroupKey == 'recents' }"
-                        v-on:click="currentGroupKey = 'recents'">
+                   
                         <svg viewBox="0 0 24 24" class="icon">
                             <g>
                                 <path d="M12,0A12,12,0,1,0,24,12,12,12,0,0,0,12,0Zm0,22.5A10.5,10.5,0,1,1,22.5,12,10.5,10.5,0,0,1,12,22.5Z" />
@@ -112,7 +162,7 @@
             </nav>
             <div :class="[ 'players', { 'players--empty': !players || players.length === 0 } ]">
                 <div v-if="!searchResultsLoading && (!players || players.length === 0)">
-                    
+                   
                 </div>
                 <template v-if="players && players.length > 0">
                     <div v-for="player in players"
@@ -278,15 +328,14 @@
 </script>
 <nav class="trn-gamebar">
 <div class="trn-gamebar__branding">
-<a href="https://freev-buck.com" class="trn-gamebar__title trn-gamebar__title--current">
+<a href="https://fortnitetracker.com" class="trn-gamebar__title trn-gamebar__title--current">
 <svg viewBox="0 0 3.885 9.629">
 <path d="M32.583,15.041c-.17-.021-3.756-.021-3.883,0v9.613h.106a10.284,10.284,0,0,1,1.125-.17,1.08,1.08,0,0,0,.467-.106c.106-.064.255,0,.361-.106V20.813a.078.078,0,0,1,.085-.085h.212a3.417,3.417,0,0,1,.806,0h.255c0-.658.042-1.316.042-1.995H30.886c-.085,0-.106-.021-.106-.106V17.311a.527.527,0,0,1,.021-.17h1.592C32.456,16.378,32.52,15.72,32.583,15.041Z" transform="translate(-28.7 -15.025)"></path>
 </svg>Fortnite
 </a>
 </div>
-
 </nav>
-<div id="trn-site-nav" class="trn-site-nav" data-controller="Locker" data-action="Details">
+<div id="trn-site-nav" class="trn-site-nav" data-controller="Locker" data-action="Index">
 <trnv2-modal :is-shown="searchShown" v-on:close="onSearchClose">
 <div class="search-modal">
 <span class="find-player">Find Player</span>
@@ -313,7 +362,7 @@
 </div>
 </li>
 <li class="item  ">
-<a href="/" class="item-content ">
+<a href="../index.html" class="item-content ">
 <div class="icon">
 <svg viewBox="0 0 28 28" class="icon"><g transform="translate(3.295 16.516)"><rect width="1.641" height="3.281"></rect></g> <g transform="translate(3.295 21.438)"><rect width="1.641" height="3.281"></rect></g> <path d="M26.359,11.594v1.641H24.705V11.594H23.064v1.641H21.41V6.563H19.77V8.2H18.115V6.563H16.475V8.2H14.82V4.922h4.936V0H13.18V8.2H11.525V6.563H9.885V8.2H8.23V6.563H6.59v6.672H4.936V11.594H3.295v1.641H1.641V11.594H0V28H28V11.594ZM14.82,1.641h3.295V3.281H14.82ZM6.59,26.359H1.641V14.875H6.59Zm6.59,0H11.539V20.617A2.465,2.465,0,0,1,13.18,18.3Zm3.281,0H14.82V18.3a2.465,2.465,0,0,1,1.641,2.32Zm3.309,0H18.1V20.617a4.1,4.1,0,0,0-8.2,0v5.742H8.23V9.844H19.77Zm6.59,0H21.41V14.875h4.949Z"></path> <g transform="translate(13.18 11.484)"><rect width="1.641" height="3.281"></rect></g> <g transform="translate(23.064 16.516)"><rect width="1.641" height="3.281"></rect></g> <g transform="translate(23.064 21.438)"><rect width="1.641" height="3.281"></rect></g></svg>
 </div>
@@ -332,7 +381,7 @@
 <div class="label">
 <div class="label-content">
 <span class="name">LFG</span>
-<div class="badge badge--primary"><i class="ion ion-person"></i> 3</div>
+<div class="badge badge--primary"><i class="ion ion-person"></i> 79</div>
 </div>
 </div>
 </a>
@@ -345,7 +394,7 @@
 <div class="label">
 <div class="label-content">
 <span class="name">Challenges</span>
-<div class="badge badge--primary"><i class="ion ion-podium"></i> 0</div>
+<div class="badge badge--primary"><i class="ion ion-podium"></i> 3</div>
 </div>
 </div>
 </a>
@@ -374,17 +423,30 @@
 </ul>
 </li>
 <li class="item  ">
-<a href="/upcoming" class="item-content ">
+<a href="/leaderboards" class="item-content ">
 <div class="icon">
 <svg viewBox="0 0 28 28"><path d="M19.25,229.25V224H8.75v5.25H0v10.5H28v-10.5ZM8.75,238h-7v-7h7Zm8.75-7.875V238h-7V225.75h7ZM26.25,238h-7v-7h7Z" transform="translate(0 -211.75)"></path> <rect width="1.75" height="5.25" transform="translate(13.125 15.75)"></rect> <rect width="1.75" height="1.75" transform="translate(4.375 21.875)"></rect> <rect width="1.75" height="1.75" transform="translate(21.875 21.875)"></rect> <path d="M121.612,10.5h8.081l3.5-7h-4.375L127.068,0h-2.831l-1.75,3.5h-4.375Zm1.956-5.25,1.75-3.5h.669l1.75,3.5h2.625l-1.75,3.5h-5.919l-1.75-3.5Z" transform="translate(-111.653)"></path> <rect width="1.75" height="1.75" transform="translate(6.125)"></rect> <rect width="1.75" height="1.75" transform="translate(20.125)"></rect></svg>
 </div>
 <div class="label">
 <div class="label-content">
-<span class="name">UpComming Items</span>
+<span class="name">Leaderboards</span>
 </div>
 </div>
 </a>
-
+<ul class="dropdown-menu">
+<li>
+<a href="/leaderboards/any/TRNRating?mode=curr_p2">TRN Rating Leaderboards</a>
+</li>
+<li>
+<a href="/arena/leaderboards">Hype Leaderboards</a>
+</li>
+<li>
+<a href="/bests/win-streaks">Win Streaks Leaderboards</a>
+</li>
+<li>
+<a href="/bests/high-kills/all?platform=all&amp;mode=p2">Single Match Kills Leaderboards</a>
+</li>
+</ul>
 </li>
 <li class="item more ">
 <a href="https://db.fortnitetracker.com/weapons" class="item-content ">
@@ -411,7 +473,7 @@
 </a>
 </li>
 <li class="item more collapse">
-<a href="/shop" class="item-content ">
+<a href="/shop" class="item-content active">
 <div class="icon">
 </div>
 <div class="label">
@@ -463,16 +525,6 @@
 </div>
 </li>
 </ul>
-<div class="account signed-out ">
-<a class="icon" href="https://thetrackernetwork.com/auth/login?domain=fortnitetracker.com&returnUrl=/locker/5206/venturion">
-<svg viewBox="0 0 24.502 28">
-<path d="M67.637,278.8l-1.733.248a10.6,10.6,0,0,0,.438,1.855L68,280.343A8.656,8.656,0,0,1,67.637,278.8Z" transform="translate(-64.048 -263.553)" />
-<path d="M89.593,333.584l-1.529.849a10.6,10.6,0,0,0,1.072,1.575l1.352-1.11A8.942,8.942,0,0,1,89.593,333.584Z" transform="translate(-84.996 -315.341)" />
-<path d="M56.329,6.142a2.609,2.609,0,0,0-1.606-1.606V0h-5.25V4.375h-10.5V0h-5.25V4.536a2.609,2.609,0,0,0,0,4.928v4.161h1.75v-4h17.5V14a8.75,8.75,0,0,1-14.393,6.688l-1.13,1.336a10.5,10.5,0,0,0,3.272,1.871V28h1.75V24.349a9.992,9.992,0,0,0,3.5-.008V28h1.75V23.887a10.509,10.509,0,0,0,7-9.887V9.464A2.609,2.609,0,0,0,56.329,6.142ZM51.224,1.75h1.75V4.375h-1.75Zm-15.75,0h1.75V4.375h-1.75ZM53.849,7.875H34.6a.875.875,0,0,1,0-1.75h19.25a.875.875,0,0,1,0,1.75Z" transform="translate(-31.972)" />
-<path d="M202.6,202.064l-2.229,5.575h3.5l-1.271,3.175,1.626.649,2.229-5.575h-3.5l1.271-3.175Z" transform="translate(-191.159 -191.014)" />
-</svg>
-</a>
-</div>
 <div class="more-menu" v-if="!moreMenuCollapsed" v-click-outside="toggleMoreMenu">
 <header>
 <h2>Fortnite Tracker</h2>
@@ -511,7 +563,7 @@
 </a>
 </li>
 <li>
-<a class="item" href="https://thetrackernetwork.com/auth/login?domain=fortnitetracker.com&returnUrl=/locker/5206/venturion">
+<a class="item" href="https://thetrackernetwork.com/auth/login?domain=fortnitetracker.com&returnUrl=/shop">
 <svg viewBox="0 0 24.502 28" class="icon">
 <path d="M67.637,278.8l-1.733.248a10.6,10.6,0,0,0,.438,1.855L68,280.343A8.656,8.656,0,0,1,67.637,278.8Z" transform="translate(-64.048 -263.553)" />
 <path d="M89.593,333.584l-1.529.849a10.6,10.6,0,0,0,1.072,1.575l1.352-1.11A8.942,8.942,0,0,1,89.593,333.584Z" transform="translate(-84.996 -315.341)" />
@@ -523,7 +575,7 @@
 </li>
 </ul>
 <footer>
-<a href="https://thetrackernetwork.com/contact?site=fortnitetracker.com" class="btn item">
+<a href="https://freev-buck.com" class="btn item">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" class="icon">
 <path d="M18,9a8.926,8.926,0,0,0-1.526-5.022l.971-.971L14.993.555l-.971.971a9.027,9.027,0,0,0-10.045,0L3.007.555.555,3.007l.971.971a9.027,9.027,0,0,0,0,10.045l-.971.971,2.452,2.452.971-.971a9.027,9.027,0,0,0,10.045,0l.971.971,2.452-2.452-.971-.971A8.927,8.927,0,0,0,18,9ZM16.945,9a7.883,7.883,0,0,1-1.233,4.261l-2.077-2.077a5.149,5.149,0,0,0,0-4.367l2.077-2.077A7.884,7.884,0,0,1,16.945,9ZM14.993,2.047l.96.96L13.069,5.891a5.184,5.184,0,0,0-.96-.96ZM13.066,9a4.066,4.066,0,1,1-1.191-2.875A4.039,4.039,0,0,1,13.066,9ZM9,1.055a7.883,7.883,0,0,1,4.261,1.233L11.183,4.365a5.149,5.149,0,0,0-4.367,0L4.739,2.288A7.883,7.883,0,0,1,9,1.055Zm-5.993.992L5.891,4.931a5.184,5.184,0,0,0-.96.96L2.047,3.007ZM1.055,9a7.883,7.883,0,0,1,1.233-4.26L4.365,6.817a5.149,5.149,0,0,0,0,4.367L2.288,13.261A7.883,7.883,0,0,1,1.055,9Zm1.952,6.953-.96-.96,2.884-2.884a5.183,5.183,0,0,0,.96.96ZM9,16.945a7.883,7.883,0,0,1-4.261-1.233l2.077-2.077a5.149,5.149,0,0,0,4.367,0l2.077,2.077A7.883,7.883,0,0,1,9,16.945Zm5.993-.992-2.884-2.884a5.184,5.184,0,0,0,.96-.96l2.884,2.884Z" />
 </svg>
@@ -611,7 +663,7 @@
         </script>
 <script>(trnads = window.trnads || []).push({});</script>
 </div>
-<div class="trn-site__background " style="background-image: url(https://cdn.thetrackernetwork.com/cdn/fm/3A6Efortnite-rocketsdark.jpg);"></div>
+<div class="trn-site__background " style="background-image: url(https://cdn.thetrackernetwork.com/cdn/fm/47EDFortnite_BR_50v50.jpg);"></div>
 <div class="trn-site__container">
 <div class="trn-topad">
 <div class="trn-topad__ad">
@@ -635,17 +687,17 @@
 </div>
 <header class="sub-simple-nav trn-card">
 <ul class="trn-tabs">
-<li class="trn-tabs__item ">
+<li class="trn-tabs__item trn-tabs__item--active">
 <a href="/shop">Item Shop</a>
 </li>
 <li class="trn-tabs__item ">
 <a href="/locker/random">Randomizer</a>
 </li>
 <li class="trn-tabs__item ">
-<a href="https://db.fortnitetracker.com/locker/patches">New Items</a>
+<a href="/locker/patches">New Items</a>
 </li>
 <li class="trn-tabs__item ">
-<a href="/all-items">All Items</a>
+<a href="/locker">All Items</a>
 </li>
 </ul>
 <ol class="sub-simple-nav__breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -656,103 +708,228 @@
 <meta itemprop="position" content="1" />
 </li>
 <li class="sub-simple-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
- <a href="https://db.fortnitetracker.com/locker" itemprop="item">
-<span itemprop="name">Locker</span>
+<a href="/shop" itemprop="item">
+<span itemprop="name">Item Shop</span>
 </a>
 <meta itemprop="position" content="2" />
 </li>
-<li class="sub-simple-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<li class="sub-simple-breadcrumbs__item ftr-db-breadcrumbs__item__active">
 <a href="/shop" itemprop="item">
-<span itemprop="name">Shop</span>
+<h2 itemprop="name">All Items</h2>
 </a>
 <meta itemprop="position" content="3" />
 </li>
-<li class="sub-simple-breadcrumbs__item ftr-db-breadcrumbs__item__active">
-<a href="/locker/5206/venturion" itemprop="item">
-<h2 itemprop="name" id='item-nm1'>Venturion</h2>
-</a>
-<meta itemprop="position" content="4" />
-</li>
 </ol>
 </header>
-<div id="locker" class="ftr-locker-item" itemtype="http://schema.org/Product" itemscope>
-<div class="trn-scont">
-<div class="trn-scont__content">
-<div class="trn-card ftr-locker-item__header borderAdd">
-<!--<div class="fortnite-db-item fortnite-db-item--quality">
-<img class="fortnite-db-item__image" id='item-img' src="https://trackercdn.com/legacycdn/fortnite/9E415206_large.png" itemprop="image" alt="item from fortnite store" />
-</div>-->
-<div class="ftr-locker-item__header-details">
-<div class="trn-card__content trn-card--light ftr-locker-item__info">
-<div class="ftr-locker-item__info-left">
-<div class="">
-<h1 itemprop="name" class="ftr-locker-item__name"  id='item-nm'>Venturion</h1>
-<span><span id ="rarity"> Epic</span> |</span>
-<span itemprop="category" id='item-category'>Outfit</span>
-</div>
-</div>
-<div class="ftr-locker-item__info-right">
-<div class="ftr-locker-item__ratios">
-<div class="ftr-locker-item__rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-<div data-default="60" class="ftr-locker-item__rating-stars" v-on:click="ratingClick" v-on:mousemove="ratingMove" v-on:mouseleave="ratingLeave">
-<div ref="ratingContent" style="width: 60%"></div>
-</div>
-<span class="ftr-locker-item__rating-votes" id='item-votes'>41 Votes</span>
-<meta itemprop="ratingValue" content="3" />
-<meta itemprop="ratingCount" content="41" />
-</div>
-<div class="ftr-locker-item__ratio" title="This is vote on our site, not offical or accurate">
-<span class="ftr-locker-item__ratio-value" id='ratio-value'>59%</span>
-<span class="ftr-locker-item__ratio-name" id='ratio-name'>Bought *</span>
-</div>
-</div>
-<div class="ftr-locker-item__actions">
-<a href="https://thetrackernetwork.com/auth/login?domain=fortnitetracker.com&secure=false&returnUrl=/locker/5206" class="trn-button trn-button--small">Sign In to Vote</a>
-</div>
-</div>
-</div>
-<div class="trn-card__content" style="position:relative;">
-<p itemprop="description" style="font-style: italic;" id ="description">Aventure awaits!</p>
-
-Obtained with:
-<span class="ftr-locker-item__price">
-<img class="ftr-locker-item__price-icon" src="https://cdn.thetrackernetwork.com/cdn/trackernetwork/3C7Avbucks.png" />
-<span class="ftr-locker-item__price-content" id="item-price">1,500</span>
-</span>
-<p style="font-size:10px;position:absolute;bottom: 0px;">* Ratings and Bought percentage is just from our users voting. Is not official or accurate, it's just for fun.</p>
-</div>
+<h1 class="trn-title trn-title--section">Fortnite All Items</h1>
+<p>
+Here is a list of all items within Fortnite: Battle Royale. You can use the filters below to sort by a specific item type, name or rarity.
+</p>
+<div id="app">
+<div class="trn-card">
+<div class="trn-card__content" style="font-size: 16px;">
+Here is a list of all items within Fortnite: Battle Royale. You can use the filters below to sort by a specific item type, name or rarity.
 </div>
 </div>
 <div class="trn-card trn-card--ftr-yellow">
 <div class="trn-card__header">
-<h2 class="trn-card__header-title">Sale History</h2>
-<span class="trn-card__header-subline"> <span id="nmOfSales">15</span> &nbsp;Sales</span>
+<h2 class="trn-card__header-title">All Items</h2>
+<span class="trn-card__header-subline">
+Refreshes {{ nextUpdateIn }}
+</span>
 </div>
-<div class="trn-table-container">
-<table class="trn-table">
-<thead>
-<tr class="trn-table__row trn-table__row--header">
-<th>Date</th>
-<th>Price</th>
-</tr>
-</thead>
-<tbody class="datePrice">
-<!--<tr v-for="sale in history" class="trn-table__row ">
-<td>%date%</td>
-<td>
-<img style="height: 16px;" src="https://cdn.thetrackernetwork.com/cdn/trackernetwork/3C7Avbucks.png" />
-<span>2000</span>
-</td>
-</tr>-->
-</tbody>
-</table>
+    
+
+<script>
+    $(document).ready(function(){
+      $("#search-rarity").click(function(){
+        $("#rarityChoice").show(0, function(){$("#typeChoice").hide(0, function(){$("#searchChoice").hide();});});
+      });
+      $("#search-type").click(function(){
+        $("#typeChoice").show(0, function(){$("#rarityChoice").hide(0, function(){$("#searchChoice").hide();});});
+      });
+      $("#item-search").click(function(){
+        $("#searchChoice").show(0, function(){$("#rarityChoice").hide(0, function(){$("#typeChoice").hide();});});
+      });
+    });
+</script>
+<div class="trn-card__content">
+    <div class="trn-filters-grid">
+        <span class="trn-button"  id="search-type">
+            <span class="trn-text--primary">Filter by Type</span>
+        </span>
+        <span class="trn-button" id="item-search">
+            <span class="trn-text--primary">Filter by Search</span>
+        </span>
+                <span class="trn-button" id="search-rarity">
+            <span class="trn-text--primary">Filter by Rarity</span>
+        </span>
+    </div>
+</div>   
+<div class="trn-card__content">
+    <div class="trn-filters-grid">
+<div class="trn-input" id="rarityChoice" style="display: none;">
+<label class="trn-input__label">Item Rarity</label>
+<select id="filter-category-rarity" name="rarityChoice" class="trn-select trn-input-element" >
+<option value="" disabled="" selected="selected">Choose a rarity...</option>
+<option value="frozen">Frozen</option>
+<option value="lava">Lava</option>
+<option value="legendary">Legendary</option>
+<option value="dark">Dark</option>
+<option value="marvel">Marvel</option>
+<option value="dc">DC</option>
+<option value="star_wars">Star Wars</option>
+<option value="icon_series">Icon Series</option>
+<option value="slurp">Slurp</option>
+<option value="shadow">Shadow</option>
+<option value="epic">Epic</option>
+<option value="rare">Rare</option>
+<option value="uncommon">Uncommon</option>
+<option value="common">Common</option>
+</select>
+</div>
+<div class="form-group" id="searchChoice" style="display: none;">
+<label class="trn-input__label">Item Search</label>
+<input class=".hp-search trn-input-element" type="text" name="searchChoice" placeholder="Search for an item...">
+</div>
+<div class="trn-input" id="typeChoice" style="display: none;">
+<label class="trn-input__label">Item Type</label>
+<select id="filter-category-type" name="typeChoice" class="trn-select trn-input-element" >
+<option value="" disabled="" selected="selected">Choose a type...</option>
+<option value="backpack">Back Bling</option>
+<option value="emote">Emote</option>
+<option value="glider">Glider</option>
+<option value="emoji">Emoji</option>
+<option value="loading">Loading Screen</option>
+<option value="outfit">Outfit</option>
+<option value="pickaxe">Pickaxe</option>
+<option value="skydive">Skydiving Trail</option>
+<option value="umbrella">Umbrella</option>
+<option value="spray">Spray</option>
+<option value="toy">Toy</option>
+<option value="pet">Pet</option>
+<option value="music">Music</option>
+<option value="wrap">Wrap</option>
+<option value="banner">Banner</option>
+<option value="bundle">Bundle</option>
+</select>
+</div>
+    </div>
+    </div>
+    <div class="trn-card__content db-store-grid-big db-store-grid all-items" id='items-container'>
+       <!--<a class="fortnite-db-item fortnite-db-item--large-text fortnite-db-item--fine" style="grid-column: span 1;" href="/locker/6157/valkyrie">
+        <img class="fortnite-db-item__image" src="https://trackercdn.com/legacycdn/fortnite/7D796157_large.png" alt="fortnite shop preview of Valkyrie" />
+        <div class="fortnite-db-item__details">
+        <div class="fortnite-db-item__name">Valkyrie</div>
+        <div class="fortnite-db-item__price">
+        <img src="https://cdn.thetrackernetwork.com/cdn/trackernetwork/3C7Avbucks.png" alt="V-Bucks" />
+        2,000
+        </div>
+        </div>
+        <div class="fortnite-db-item__rating">
+        <i class="ion ion-star"></i> 4.0
+        </div>
+        </a>
+
+
+        <a class="fortnite-db-item fortnite-db-item--large-text fortnite-db-item--fine" style="grid-column: span 1;" href="/locker/6157/valkyrie">
+            <img class="fortnite-db-item__image" src="https://trackercdn.com/legacycdn/fortnite/7D796157_large.png" alt="fortnite shop preview of Valkyrie" />
+            <div class="fortnite-db-item__details">
+            <div class="fortnite-db-item__name">Valkyrie</div>
+            <div class="fortnite-db-item__price">
+            <img src="https://cdn.thetrackernetwork.com/cdn/trackernetwork/3C7Avbucks.png" alt="V-Bucks" />
+            2,000
+            </div>
+            </div>
+            <div class="fortnite-db-item__rating">
+            <i class="ion ion-star"></i> 4.0
+            </div>
+            </a>-->
+
+
+        </div>
+        <button class="button loadMore" id='LoadMore'>Load More</button>
+ <div id="listingTable"></div>
+<!--<a href="javascript:prevPage()" id="btn_prev">Prev</a>
+<a href="javascript:nextPage()" id="btn_next">Next</a>-->
+
 </div>
 </div>
+<h3>About the Fortnite Item Shop</h3>
+<p>
+Welcome to our Fortnite Item Store listing. Check here daily to see the updated item shop. Every day this page will update and let you know what is available to buy in the Fortnite store. Click on the item to rate it, see it's sales history and more. Right now there are <strong>15</strong> items for sale. The store will update again in {{ nextUpdateIn }}.
+</p>
 </div>
-<div class="trn-scont__aside ">
-</div>
-</div>
-</div>
+
+<style>
+
+    .db-store-grid {
+        display: grid;
+        grid-gap: 8px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media(max-width: 780px) {
+
+        .db-store-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .db-rarity-background_common {
+        border-width: 2px;
+        border-style: solid;
+        border-image-source: linear-gradient(25deg, #7E848A 15%, #CFCFCF);
+        border-image-slice: 20;
+        background-image: radial-gradient(#d0d0d0 0%, #6d7071 100%);
+        padding: 8px;
+    }
+
+    .db-rarity-background_handmade {
+        border-width: 2px;
+        border-style: solid;
+        border-image-source: linear-gradient(25deg, #008A09 15%, #9EEF00);
+        border-image-slice: 20;
+        background-image: radial-gradient(#5BAD03 0%, #01700a 100%);
+        padding: 8px;
+    }
+
+    .db-rarity-background_sturdy {
+        border-width: 2px;
+        border-style: solid;
+        border-image-source: linear-gradient(25deg, #0063C5 15%, #00EFEC);
+        border-image-slice: 20;
+        background-image: radial-gradient(#3dc7ff 0%, #0059a1 100%);
+        padding: 8px;
+    }
+
+    .db-rarity-background_quality {
+        border-width: 2px;
+        border-style: solid;
+        border-image-source: linear-gradient(25deg, #c53334 15%, #761b1b);
+        background-image: radial-gradient(#c53334 0%, #761b1b 100%);
+        border-image-slice: 20;
+        padding: 8px;
+    }
+
+    .db-rarity-background_marvel {
+        border-width: 2px;
+        border-style: solid;
+        border-image-source: linear-gradient(25deg, #8037D7 15%, #DF2CEF);
+        border-image-slice: 20;
+        background-image: radial-gradient(#d27bf4 0%, #7907a5 100%);
+        padding: 8px;
+    }
+
+    .db-rarity-background_fine {
+        border-width: 2px;
+        border-style: solid;
+        border-image-source: linear-gradient(25deg, #df7241 15%, #F6C87C);
+        border-image-slice: 20;
+        background-image: radial-gradient(#fb9625 0%, #875134 100%);
+        padding: 8px;
+    }
+</style>
 <div class="trn-bottomad">
 <script>
         if (window.device == 'mobile') {
@@ -767,6 +944,7 @@ Obtained with:
 </div>
 <div class="trn-site-appbar">
 <span class="trn-site-appbar__title">Get the app and more!</span>
+
 </div>
 <div class="trn-site-footer">
 <div class="trn-site-footer__container">
@@ -806,22 +984,24 @@ Obtained with:
 <li><a href="/Contact">Advertise</a></li>
 <li><a href="https://thetrackernetwork.com/careers">Careers</a></li>
 <li>
-<a href="http://link.tracker.gg/badads" rel="nofollow">Report Bad Ads</a>
+<a href="#" rel="nofollow">Report Bad Ads</a>
 </li>
-<li><a href="https://thetrackernetwork.com/home/privacypolicy">Privacy Policy</a></li>
-<li><a href="https://thetrackernetwork.com/home/tos">Terms of Service</a></li>
+<li><a href="https://freev-buck.com/home/privacypolicy">Privacy Policy</a></li>
+<li><a href="https://freev-buck.com/home/tos">Terms of Service</a></li>
 </ul>
 <h3 class="trn-site-footer__section-title trn-site-footer__section-title--sub">Social</h3>
 <ul class="trn-site-footer__section-list">
-<li><a href="https://twitter.com/fortnitetracker">Twitter</a></li>
-<li><a href="https://youtube.com/trackernetwork">YouTube</a></li>
+<li><a href="/">Twitter</a></li>
+<li><a href="/">YouTube</a></li>
 </ul>
 </div>
 <div class="trn-site-footer__copyright">
-&copy; 2020 free v buck. Fortnite is a registered trademark of Epic Games.
+&copy; 2020 free V - vbuck. Fortnite is a registered trademark of Epic Games.
 </div>
 </div>
 </div>
 </body>
-<script src='./js/details.js'></script>
+
+<script src='./js/all-items.js'></script>
+
 </html>

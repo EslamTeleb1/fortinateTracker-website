@@ -4,6 +4,9 @@
 <html lang="ar">
 <head>
 
+
+
+    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
 <meta name="msapplication-navbutton-color" content="#080808">
@@ -12,6 +15,10 @@
 <link rel="canonical" href="https://freev-buck.com/shop" />
 <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
 <style>
+
+
+
+
         .fortnite-db-item__name, .burbank {
             font-family: burbank-big;
         }
@@ -28,6 +35,35 @@
         }
         
 
+    </style>
+    <style>
+        .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.loadMore {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+.loadMore:hover {
+  background-color: #555555;
+  color: white;
+}
     </style>
 <title>
     Fortnite all Item Shop - Today's UPCOMING - Cosmetics and Skins
@@ -80,7 +116,7 @@
                    v-on:click="historyShown = true">
         </form>
         <div v-if="historyShown" class="history">
-            <nav>
+            <nav style=" position: relative">
                 <ul>
                     <li :class="{ active: currentGroupKey == 'recents' }"
                         v-on:click="currentGroupKey = 'recents'">
@@ -781,8 +817,8 @@ Refreshes {{ nextUpdateIn }}
 </div>
     </div>
     </div>
-    <div class="trn-card__content db-store-grid-big db-store-grid all-items" id='pagination-container'>
-        <!--<a class="fortnite-db-item fortnite-db-item--large-text fortnite-db-item--fine" style="grid-column: span 1;" href="/locker/6157/valkyrie">
+    <div class="trn-card__content db-store-grid-big db-store-grid all-items" id='items-container'>
+       <!--<a class="fortnite-db-item fortnite-db-item--large-text fortnite-db-item--fine" style="grid-column: span 1;" href="/locker/6157/valkyrie">
         <img class="fortnite-db-item__image" src="https://trackercdn.com/legacycdn/fortnite/7D796157_large.png" alt="fortnite shop preview of Valkyrie" />
         <div class="fortnite-db-item__details">
         <div class="fortnite-db-item__name">Valkyrie</div>
@@ -794,13 +830,30 @@ Refreshes {{ nextUpdateIn }}
         <div class="fortnite-db-item__rating">
         <i class="ion ion-star"></i> 4.0
         </div>
-        </a>-->
-        <p>loading…</p>
+        </a>
+
+
+        <a class="fortnite-db-item fortnite-db-item--large-text fortnite-db-item--fine" style="grid-column: span 1;" href="/locker/6157/valkyrie">
+            <img class="fortnite-db-item__image" src="https://trackercdn.com/legacycdn/fortnite/7D796157_large.png" alt="fortnite shop preview of Valkyrie" />
+            <div class="fortnite-db-item__details">
+            <div class="fortnite-db-item__name">Valkyrie</div>
+            <div class="fortnite-db-item__price">
+            <img src="https://cdn.thetrackernetwork.com/cdn/trackernetwork/3C7Avbucks.png" alt="V-Bucks" />
+            2,000
+            </div>
+            </div>
+            <div class="fortnite-db-item__rating">
+            <i class="ion ion-star"></i> 4.0
+            </div>
+            </a>-->
+
+
         </div>
+        <button class="button loadMore" id='LoadMore'>Load More</button>
  <div id="listingTable"></div>
-<a href="javascript:prevPage()" id="btn_prev">Prev</a>
-<a href="javascript:nextPage()" id="btn_next">Next</a>
-page: <span id="page"></span>
+<!--<a href="javascript:prevPage()" id="btn_prev">Prev</a>
+<a href="javascript:nextPage()" id="btn_next">Next</a>-->
+
 </div>
 </div>
 <h3>About the Fortnite Item Shop</h3>
@@ -949,111 +1002,7 @@ Welcome to our Fortnite Item Store listing. Check here daily to see the updated 
 </div>
 </div>
 </body>
-<script >
-   var current_page = 1;
-   var records_per_page =12;
-   
-   var objJson = []; // Can be obtained from another source, such as your objJson variable
-   
 
-   var selectedRarity;
+<script src='./js/all-items.js'></script>
 
-function prevPage()
-   {
-       if (current_page > 1) {
-           current_page--;
-           changePage(current_page);
-       }
-   }
-   
-function nextPage()
-   {
-       if (current_page < numPages()) {
-           current_page++;
-           changePage(current_page);
-       }
-   }
-       
-function changePage(page)
-   {
-       var btn_next = document.getElementById("btn_next");
-       var btn_prev = document.getElementById("btn_prev");
-       var pagination_container = document.getElementById("pagination-container");
-       var page_span = document.getElementById("page");
-    
-       // Validate page
-       if (page < 1) page = 1;
-       if (page > numPages()) page = numPages();
-   
-       pagination_container.innerHTML = "";
-   
-       for (var i = (page-1) * records_per_page; i < (page * records_per_page) && i < objJson.length; i++) {
-      
-        if(selectedRarity)
-        {
-            var border=selectedRarity==='uncommon'?'handmade':selectedRarity;
-
-var html=`<a class="fortnite-db-item fortnite-db-item--large-text fortnite-db-item--%rarity% " style="grid-column: span 1;" href="#" id="%id%"><img loading="lazy" class="fortnite-db-item__image" src="%img%" alt="fortnite shop item" /><div class="fortnite-db-item__details"><div class="fortnite-db-item__name" >%name%</div><div class="fortnite-db-item__price"><img loading="lazy" src="https://cdn.thetrackernetwork.com/cdn/trackernetwork/3C7Avbucks.png" alt="2000 v-bucks" /> <span>%price%</span></div></div><div class="fortnite-db-item__rating"><i class="ion ion-star"></i> %star%</div></a>`;
-//console.log(objJson[i])
-nwHtml=html.replace('%id%',  objJson[i].id);
-// src of the image
-if(objJson[i].images)
-nwHtml=nwHtml.replace('%img%', objJson[i].images.icon);
-//change border style
- nwHtml=nwHtml.replace('%rarity%',border)
-nwHtml=nwHtml.replace('%name%', objJson[i].name)
-nwHtml=nwHtml.replace('%title%', objJson[i].name)
-nwHtml=nwHtml.replace('%price%', objJson[i].price)
-if(objJson[i].interest)
-nwHtml=nwHtml.replace('%star%', objJson[i].interest.toFixed(2))
-pagination_container.innerHTML+=nwHtml;
-//document.querySelector('.all-items').insertAdjacentHTML('beforeend', nwHtml);
-
-        }
-        else{
-            var border= objJson[i].rarity==='uncommon'?'handmade': objJson[i].rarity;
-
-var html=`<a class="fortnite-db-item fortnite-db-item--large-text fortnite-db-item--%rarity% " style="grid-column: span 1;" href="#" id="%id%"><img loading="lazy" class="fortnite-db-item__image" src="%img%" alt="fortnite shop item" /><div class="fortnite-db-item__details"><div class="fortnite-db-item__name" >%name%</div><div class="fortnite-db-item__price"><img loading="lazy" src="https://cdn.thetrackernetwork.com/cdn/trackernetwork/3C7Avbucks.png" alt="2000 v-bucks" /> <span>%price%</span></div></div><div class="fortnite-db-item__rating"><i class="ion ion-star"></i> %star%</div></a>`;
-//console.log(objJson[i])
-nwHtml=html.replace('%id%',  objJson[i].id);
-// src of the image
-if(objJson[i].images)
-nwHtml=nwHtml.replace('%img%', objJson[i].images.icon);
-//change border style
- nwHtml=nwHtml.replace('%rarity%',border)
-nwHtml=nwHtml.replace('%name%', objJson[i].name)
-nwHtml=nwHtml.replace('%title%', objJson[i].name)
-nwHtml=nwHtml.replace('%price%', objJson[i].price)
-if(objJson[i].interest)
-nwHtml=nwHtml.replace('%star%', objJson[i].interest.toFixed(2))
-pagination_container.innerHTML+=nwHtml;
-        }
- 
-
-       }
-       page_span.innerHTML = page + "/" + numPages();
-   
-       if (page == 1) {
-           btn_prev.style.visibility = "hidden";
-       } else {
-           btn_prev.style.visibility = "visible";
-       }
-   
-       if (page == numPages()) {
-           btn_next.style.visibility = "hidden";
-       } else {
-           btn_next.style.visibility = "visible";
-       }
-   }
-   
-   function numPages()
-   {
-       return Math.ceil(objJson.length / records_per_page);
-   }
-   
-   window.onload = function() {
-       changePage(1);
-   };
-</script>
-<script src='../js/all-items.js'></script>
 </html>

@@ -45,6 +45,11 @@ app.get('/upcoming',(req,res)=>{
     res.render('upcoming')
 
 })
+app.get('/all-items',(req,res)=>{
+
+    res.render('all-Items')
+
+})
 
 app.get('/*',(req,res)=>{
 
