@@ -16,7 +16,7 @@ headers: {'Authorization': API_Key}})
        const showItems=(start,n)=>{
         for(let i=start;i<=n;i++)
         {
-            var border= result.items[i].rarity==='uncommon'?'handmade': result.items[i].rarity;
+            var border= result.items[i].rarity.name.toLocaleLowerCase()==='uncommon'?'handmade': result.items[i].rarity.name.toLocaleLowerCase();
 
             var html=`<a class="fortnite-db-item fortnite-db-item--large-text fortnite-db-item--%rarity% " style="grid-column: span 1;" href="/details?id=%id%" id="%id%"><img loading="lazy" class="fortnite-db-item__image" src="%img%" alt="fortnite shop item" /><div class="fortnite-db-item__details"><div class="fortnite-db-item__name" >%name%</div><div class="fortnite-db-item__price"><img loading="lazy" src="https://cdn.thetrackernetwork.com/cdn/trackernetwork/3C7Avbucks.png" alt="2000 v-bucks" /> <span>%price%</span></div></div><div class="fortnite-db-item__rating"><i class="ion ion-star"></i> %star%</div></a>`;
             //console.log(result.items[i])
