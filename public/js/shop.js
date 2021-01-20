@@ -906,7 +906,7 @@ const FortniteAPI = require("fortnite-api-io");
 
 // Instantiate with API Credentials
 
-const API_Key='edc47162-9716dc98-c724884c-58bb9cb9'
+const API_Key='361618b4-f348534e-6616046c-7e87897f'
 
 const fortniteAPI = new FortniteAPI(API_Key);
 

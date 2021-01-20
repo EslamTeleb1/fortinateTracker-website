@@ -15,7 +15,7 @@ var qs = (function(a) {
 let id =qs['id']
 console.log(id)
 const url =`https://fortniteapi.io/v1/items/get?id=${id}&lang=en`
-const API_Key='edc47162-9716dc98-c724884c-58bb9cb9'
+const API_Key='361618b4-f348534e-6616046c-7e87897f'
 
 
 fetch(url, {method:'GET', 

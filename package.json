@@ -10,10 +10,9 @@
   "author": "IslamTolba",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
     "express": "^4.17.1",
     "fortnite-api-io": "^1.8.0",
-    "hbs": "^4.1.1",
-    "nodemon": "^2.0.7"
-  }
+    "hbs": "^4.1.1"
+  },
+  "devDependencies": {}
 }
