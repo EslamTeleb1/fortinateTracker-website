@@ -32,6 +32,9 @@ headers: {'Authorization': API_Key}})
     <img class="fortnite-db-item__image" id='item-img' src="https://trackercdn.com/legacycdn/fortnite/9E415206_large.png" itemprop="image" alt="item from fortnite store" />`
     
     Html=Html.replace('%rarity%',border);
+    const stars=result.item.interest.toFixed(1)<=0?0:result.item.interest.toFixed(1);
+    
+    document.getElementById('stars').style.width=`${stars*20>100?100:stars*20}%`
     
     document.querySelector('.borderAdd').insertAdjacentHTML('afterbegin', Html);
     

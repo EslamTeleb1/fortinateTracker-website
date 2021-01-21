@@ -9,9 +9,10 @@ headers: {'Authorization': API_Key}})
  
    result.json().then(function(result){
 
-    const types=['backpack','bannertoken','bundle','contrail','cosmeticvariant','emoji','emote','glider','loadingscreen','music','outfit','pet','pickaxe','spray','toy','wrap']
+    document.getElementById('loding').style.visibility='hidden'
+    //const types=['backpack','bannertoken','bundle','contrail','cosmeticvariant','emoji','emote','glider','loadingscreen','music','outfit','pet','pickaxe','spray','toy','wrap']
 
-    console.log(result.items)
+    //console.log(result.items)
         var container = document.getElementById("items-container");
 
         const addItems=(i)=>{
@@ -34,16 +35,28 @@ headers: {'Authorization': API_Key}})
         }
        const showItems=(start,n,type,rarity)=>{
 
-          if(type)
-          {console.log(type)
+        if(rarity&&type)
+        {
+          for(let i=start;i<=n;i++)
+          if(type==result.items[i].type.id)
+          {
+            if (result.items[i].rarity){
+              if(rarity==result.items[i].rarity.id.toLocaleLowerCase())
+
+              addItems(i)
+            } 
+          }
+             
+        }
+        else  if(type)
+          {//console.log(type)
             for(let i=start;i<=n;i++)
             if(type==result.items[i].type.id)
-
                addItems(i)
           }
           else if(rarity)
           {
-            console.log(rarity)
+            //console.log(rarity)
             for(let i=start;i<=n;i++)
             {
               if (result.items[i].rarity){
@@ -66,6 +79,12 @@ headers: {'Authorization': API_Key}})
      showItems(0,101)
      var nItems=100,start,type,rarity;
        document.getElementById('LoadMore').addEventListener('click',()=>{
+         if(rarity&&type)
+         {
+          start=nItems+1
+          nItems=start+200;
+          showItems(start,nItems,type,rarity)
+         }
         start=nItems+1
         nItems=start+200;
         showItems(start,nItems,type,rarity)
@@ -96,13 +115,31 @@ document.getElementById('filter-category-rarity').addEventListener('change',()=>
 
  showItems(start,nItems,type,rarity)
 
-})  
-
+}) 
 
 document.getElementById('itemName').addEventListener('change',()=>{
 
-console.log('hi')
-})
+  const searchig=document.getElementById('searhing')
+  itemName =document.getElementById('itemName').value
+  searchig.style.visibility='visible'
+   var index=0
+  var item = result.items.find(item=>{
+     index++;
+    return item.name==itemName
+  })
+  document.getElementById('itemName').value=""
+  if(item)
+  {
+    searchig.style.visibility='hidden'
+    container.innerHTML=" "
+     addItems(index-1)
+     return
+  }
+  searchig.textContent=" Not Found !!!"
+
+}) 
+
+
 
 }).catch((e)=>{
 

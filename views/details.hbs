@@ -374,13 +374,13 @@
 </ul>
 </li>
 <li class="item  ">
-<a href="/upcoming" class="item-content ">
+<a href="/all-items" class="item-content ">
 <div class="icon">
 <svg viewBox="0 0 28 28"><path d="M19.25,229.25V224H8.75v5.25H0v10.5H28v-10.5ZM8.75,238h-7v-7h7Zm8.75-7.875V238h-7V225.75h7ZM26.25,238h-7v-7h7Z" transform="translate(0 -211.75)"></path> <rect width="1.75" height="5.25" transform="translate(13.125 15.75)"></rect> <rect width="1.75" height="1.75" transform="translate(4.375 21.875)"></rect> <rect width="1.75" height="1.75" transform="translate(21.875 21.875)"></rect> <path d="M121.612,10.5h8.081l3.5-7h-4.375L127.068,0h-2.831l-1.75,3.5h-4.375Zm1.956-5.25,1.75-3.5h.669l1.75,3.5h2.625l-1.75,3.5h-5.919l-1.75-3.5Z" transform="translate(-111.653)"></path> <rect width="1.75" height="1.75" transform="translate(6.125)"></rect> <rect width="1.75" height="1.75" transform="translate(20.125)"></rect></svg>
 </div>
 <div class="label">
 <div class="label-content">
-<span class="name">UpComming Items</span>
+<span class="name">All Items</span>
 </div>
 </div>
 </a>
@@ -639,10 +639,7 @@
 <a href="/shop">Item Shop</a>
 </li>
 <li class="trn-tabs__item ">
-<a href="/locker/random">Randomizer</a>
-</li>
-<li class="trn-tabs__item ">
-<a href="https://db.fortnitetracker.com/locker/patches">New Items</a>
+<a href="/upcoming">UpComing Items</a>
 </li>
 <li class="trn-tabs__item ">
 <a href="/all-items">All Items</a>
@@ -655,12 +652,12 @@
 </a>
 <meta itemprop="position" content="1" />
 </li>
-<li class="sub-simple-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<!--<li class="sub-simple-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
  <a href="https://db.fortnitetracker.com/locker" itemprop="item">
 <span itemprop="name">Locker</span>
 </a>
 <meta itemprop="position" content="2" />
-</li>
+</li>-->
 <li class="sub-simple-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 <a href="/shop" itemprop="item">
 <span itemprop="name">Shop</span>
@@ -695,20 +692,20 @@
 <div class="ftr-locker-item__ratios">
 <div class="ftr-locker-item__rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
 <div data-default="60" class="ftr-locker-item__rating-stars" v-on:click="ratingClick" v-on:mousemove="ratingMove" v-on:mouseleave="ratingLeave">
-<div ref="ratingContent" style="width: 60%"></div>
+<div ref="ratingContent"  id ='stars'></div>
 </div>
-<span class="ftr-locker-item__rating-votes" id='item-votes'>41 Votes</span>
-<meta itemprop="ratingValue" content="3" />
+<!--<span class="ftr-locker-item__rating-votes" id='item-votes'>41 Votes</span>-->
+<meta itemprop="ratingValue" content="4" />
 <meta itemprop="ratingCount" content="41" />
 </div>
-<div class="ftr-locker-item__ratio" title="This is vote on our site, not offical or accurate">
+<!--<div class="ftr-locker-item__ratio" title="This is vote on our site, not offical or accurate">
 <span class="ftr-locker-item__ratio-value" id='ratio-value'>59%</span>
 <span class="ftr-locker-item__ratio-name" id='ratio-name'>Bought *</span>
+</div>-->
 </div>
-</div>
-<div class="ftr-locker-item__actions">
+<!--<div class="ftr-locker-item__actions">
 <a href="https://thetrackernetwork.com/auth/login?domain=fortnitetracker.com&secure=false&returnUrl=/locker/5206" class="trn-button trn-button--small">Sign In to Vote</a>
-</div>
+</div>-->
 </div>
 </div>
 <div class="trn-card__content" style="position:relative;">
@@ -719,7 +716,7 @@ Obtained with:
 <img class="ftr-locker-item__price-icon" src="https://cdn.thetrackernetwork.com/cdn/trackernetwork/3C7Avbucks.png" />
 <span class="ftr-locker-item__price-content" id="item-price">1,500</span>
 </span>
-<p style="font-size:10px;position:absolute;bottom: 0px;">* Ratings and Bought percentage is just from our users voting. Is not official or accurate, it's just for fun.</p>
+<!--<p style="font-size:10px;position:absolute;bottom: 0px;">* Ratings and Bought percentage is just from our users voting. Is not official or accurate, it's just for fun.</p>-->
 </div>
 </div>
 </div>

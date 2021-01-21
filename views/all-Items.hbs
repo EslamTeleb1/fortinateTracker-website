@@ -423,30 +423,16 @@
 </ul>
 </li>
 <li class="item  ">
-<a href="/leaderboards" class="item-content ">
+<a href="/all-items" class="item-content ">
 <div class="icon">
 <svg viewBox="0 0 28 28"><path d="M19.25,229.25V224H8.75v5.25H0v10.5H28v-10.5ZM8.75,238h-7v-7h7Zm8.75-7.875V238h-7V225.75h7ZM26.25,238h-7v-7h7Z" transform="translate(0 -211.75)"></path> <rect width="1.75" height="5.25" transform="translate(13.125 15.75)"></rect> <rect width="1.75" height="1.75" transform="translate(4.375 21.875)"></rect> <rect width="1.75" height="1.75" transform="translate(21.875 21.875)"></rect> <path d="M121.612,10.5h8.081l3.5-7h-4.375L127.068,0h-2.831l-1.75,3.5h-4.375Zm1.956-5.25,1.75-3.5h.669l1.75,3.5h2.625l-1.75,3.5h-5.919l-1.75-3.5Z" transform="translate(-111.653)"></path> <rect width="1.75" height="1.75" transform="translate(6.125)"></rect> <rect width="1.75" height="1.75" transform="translate(20.125)"></rect></svg>
 </div>
 <div class="label">
 <div class="label-content">
-<span class="name">Leaderboards</span>
+<span class="name">All Items</span>
 </div>
 </div>
 </a>
-<ul class="dropdown-menu">
-<li>
-<a href="/leaderboards/any/TRNRating?mode=curr_p2">TRN Rating Leaderboards</a>
-</li>
-<li>
-<a href="/arena/leaderboards">Hype Leaderboards</a>
-</li>
-<li>
-<a href="/bests/win-streaks">Win Streaks Leaderboards</a>
-</li>
-<li>
-<a href="/bests/high-kills/all?platform=all&amp;mode=p2">Single Match Kills Leaderboards</a>
-</li>
-</ul>
 </li>
 <li class="item more ">
 <a href="https://db.fortnitetracker.com/weapons" class="item-content ">
@@ -691,10 +677,7 @@
 <a href="/shop">Item Shop</a>
 </li>
 <li class="trn-tabs__item ">
-<a href="/locker/random">Randomizer</a>
-</li>
-<li class="trn-tabs__item ">
-<a href="/locker/patches">New Items</a>
+<a href="/upcoming">UpComing Items</a>
 </li>
 <li class="trn-tabs__item ">
 <a href="/locker">All Items</a>
@@ -791,6 +774,8 @@ Refreshes {{ nextUpdateIn }}
 <div class="form-group" id="searchChoice" style="display: none;">
 <label class="trn-input__label">Item Search</label>
 <input class=".hp-search trn-input-element" type="text" name="searchChoice" id='itemName'  placeholder="Search for an Item by name...">
+<br>
+<p id='searhing' style="visibility:  hidden;">Searching...</p>
 </div>
 <div class="trn-input" id="typeChoice" style="display: none;">
 <label class="trn-input__label">Item Type</label>
@@ -816,7 +801,9 @@ Refreshes {{ nextUpdateIn }}
 </div>
     </div>
     </div>
+      <span id ='loding'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loading...</span>
     <div class="trn-card__content db-store-grid-big db-store-grid all-items" id='items-container'>
+    
        <!--<a class="fortnite-db-item fortnite-db-item--large-text fortnite-db-item--fine" style="grid-column: span 1;" href="/locker/6157/valkyrie">
         <img class="fortnite-db-item__image" src="https://trackercdn.com/legacycdn/fortnite/7D796157_large.png" alt="fortnite shop preview of Valkyrie" />
         <div class="fortnite-db-item__details">
