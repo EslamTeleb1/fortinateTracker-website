@@ -10,7 +10,7 @@ headers: {'Authorization': API_Key}})
    result.json().then(result=>{
  //add Daily Items
  //console.log('daily items id')
-console.log(result)
+//console.log(result)
 
 for(let i=0;i<=result.daily.length-1;i++)
  {
@@ -89,7 +89,7 @@ headers: {'Authorization': API_Key}})
    
    result.json().then(result=>{
 
-      console.log(result)
+    //  console.log(result)
 
       for(let i=0;i<result.news.length;i++)
       {
@@ -108,3 +108,20 @@ headers: {'Authorization': API_Key}})
    })
 })
 
+let url1 ='https://fortnite-api.com/v2/news/br'
+const API_Key1='6bcfb6943b53d46d2d2b7c7c36b96dcd7e9b5617'
+
+
+fetch(url1, {method:'GET', 
+headers: {'Authorization': API_Key1}})
+.then((result)=>{
+ 
+   result.json().then(result=>{
+
+
+      console.log("from api.com : ",result)
+
+   })
+
+
+})
