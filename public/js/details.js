@@ -46,7 +46,20 @@ headers: {'Authorization': API_Key}})
     document.getElementById('item-category').textContent=result.item.type;
     document.getElementById('item-price').textContent=result.item.price;
        //add src from result.item.featured
-    document.getElementById('item-img').src=result.item.images.featured;
+       const imgs = result.item.images
+         let img=imgs.featured;
+         if(imgs.featured==undefined)
+         {
+             img=imgs.background
+             if(!img)
+               {
+                   img=imgs.full_background
+                if(!img)
+                img=imgs.icon
+            }
+               
+         }
+    document.getElementById('item-img').src=img;
     //document.getElementById('item-votes').textContent=result.
     //document.getElementById('ratio-value').textContent=result.
     //document.getElementById('ratio-name').textContent=result.

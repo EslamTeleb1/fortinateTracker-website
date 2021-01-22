@@ -108,20 +108,20 @@ headers: {'Authorization': API_Key}})
    })
 })
 
-let url1 ='https://fortniteapi.io/v1/loot/fish?lang=en'
-const API_Key1='361618b4-f348534e-6616046c-7e87897f'
+// let url1 ='https://fortniteapi.io/v1/loot/fish?lang=en'
+// const API_Key1='361618b4-f348534e-6616046c-7e87897f'
 
 
-fetch(url1, {method:'GET', 
-headers: {'Authorization': API_Key1}})
-.then((result)=>{
+// fetch(url1, {method:'GET', 
+// headers: {'Authorization': API_Key1}})
+// .then((result)=>{
  
-   result.json().then(result=>{
+//    result.json().then(result=>{
 
 
-      console.log("from api.com : ",result)
+//       //console.log(result)
 
-   })
+//    })
 
 
-})
+// })
