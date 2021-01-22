@@ -50,10 +50,19 @@ app.get('/all-items',(req,res)=>{
     res.render('all-Items')
 
 })
+app.get('/fish',(req,res)=>{
 
+    res.render('fish')
+
+})
+app.get('/commingsoon',(req,res)=>{
+
+    res.render('commingsoon')
+
+})
 app.get('/*',(req,res)=>{
 
-    res.send(" 404 , this is page not found ")
+    res.render('notfound')
 })
 app.listen(port,()=>{
 

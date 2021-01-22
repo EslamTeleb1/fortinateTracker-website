@@ -108,8 +108,8 @@ headers: {'Authorization': API_Key}})
    })
 })
 
-let url1 ='https://fortnite-api.com/v2/news/br'
-const API_Key1='6bcfb6943b53d46d2d2b7c7c36b96dcd7e9b5617'
+let url1 ='https://fortniteapi.io/v1/loot/fish?lang=en'
+const API_Key1='361618b4-f348534e-6616046c-7e87897f'
 
 
 fetch(url1, {method:'GET', 
