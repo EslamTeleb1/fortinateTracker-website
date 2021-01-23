@@ -932,16 +932,18 @@
         {
            var border=result.fish[i].rarity==='uncommon'?'handmade':result.fish[i].rarity;
     
-     var html=`<a class="fortnite-db-item fortnite-db-item--large-text fortnite-db-item--%rarity% " style="grid-column: span 1;"  id="%id%"><img loading="lazy" class="fortnite-db-item__image" src="%img%" alt="fortnite shop item" /><div class="fortnite-db-item__details"><div class="fortnite-db-item__name" >%name%</div><div class="fortnite-db-item__price"> <span>%price%</span></div></div><div class="fortnite-db-item__rating"></div></a>`;
+     var html=`<a herf=" " title="%title%"class="fortnite-db-item fortnite-db-item--large-text fortnite-db-item--%rarity% myDIV" style="grid-column: span 1;"  id="%id%"><img loading="lazy" class="fortnite-db-item__image " src="%img%" alt="fortnite shop item" /><div class="fortnite-db-item__details"><div class="fortnite-db-item__name" >%name%</div><div class="fortnite-db-item__price"> <span>%price%</span></div></div><div class="fortnite-db-item__rating"><span>%heal%</span></div></a>`;
     
       nwHtml=html.replace('%id%', result.fish[i].id);
+      nwHtml=html.replace('%title%', result.fish[i].location);
       // src of the image
       nwHtml=nwHtml.replace('%img%',result.fish[i].image);
       //change border style
          nwHtml=nwHtml.replace('%rarity%',border)
       nwHtml=nwHtml.replace('%name%',result.fish[i].name)
+      nwHtml=nwHtml.replace('%heal%',"Heal : "+result.fish[i].heal)
       nwHtml=nwHtml.replace('%title%',result.fish[i].name)
-      nwHtml=nwHtml.replace('%price%',result.fish[i].description)
+      nwHtml=nwHtml.replace('%price%',result.fish[i].description+' =>'+result.fish[i].details)
      // nwHtml=nwHtml.replace('%star%',result.fish[i].interest.toFixed(2))
     
       document.querySelector('.fish-items').insertAdjacentHTML('beforeend', nwHtml);

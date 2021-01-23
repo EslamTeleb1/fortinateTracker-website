@@ -10,7 +10,7 @@ headers: {'Authorization': API_Key}})
    result.json().then(result=>{
  //add Daily Items
  //console.log('daily items id')
-console.log(result)
+//console.log(result)
 
 for(let i=0;i<=result.daily.length-1;i++)
  {
