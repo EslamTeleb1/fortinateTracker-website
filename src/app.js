@@ -62,8 +62,10 @@ app.get('/commingsoon',(req,res)=>{
 })
 app.get('/*',(req,res)=>{
 
-    res.render('notfound')
+    res.render('commingsoon')
 })
+
+
 app.listen(port,()=>{
 
     console.log("server is running on port "+port)

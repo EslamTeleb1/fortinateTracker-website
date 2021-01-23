@@ -10,11 +10,11 @@ headers: {'Authorization': API_Key}})
    result.json().then(result=>{
  //add Daily Items
  //console.log('daily items id')
-//console.log(result)
+console.log(result)
 
 for(let i=0;i<=result.daily.length-1;i++)
  {
-    var border=result.daily[i].raritwy==='uncommon'?'handmade':result.daily[i].rarity;
+    var border=result.daily[i].rarity==='uncommon'?'handmade':result.daily[i].rarity;
 var html=`<a href="/details?id=%id%" class="fortnite-db-item fortnite-db-item--%rarity%" title="%title%"><img loading="lazy" class="fortnite-db-item__image" src="%img%" alt="fortnite shop item Whiteout" /><div class="fortnite-db-item__details"><div class="fortnite-db-item__name"><span >%name%</span></div><div class="fortnite-db-item__price"><img loading="lazy" src="https://cdn.thetrackernetwork.com/cdn/trackernetwork/3C7Avbucks.png" alt="1500 v-bucks" /><span >%price%</span></div></div><div class="fortnite-db-item__rating"><i class="ion ion-star" ></i> <span>%star%</span></div></a>`,
 
 nwHtml=html.replace('%id%', result.daily[i].id);
@@ -97,7 +97,7 @@ headers: {'Authorization': API_Key}})
 
          var newHtml=html.replace('%image%',result.news[i].image)
          newHtml=newHtml.replace('%title%',result.news[i].title)
-         newHtml=newHtml.replace('%author%',result.news[i].tabTitle+"  "+result.news[i].body)
+         newHtml=newHtml.replace('%author%',result.news[i].tabTitle +"  "+ result.news[i].body)
          newHtml=newHtml.replace('%date%',result.news[i].date) 
          newHtml=newHtml.replace('%date%',new Date(result.news[i].date).toDateString())
          document.querySelector('.news').insertAdjacentHTML('beforeend', newHtml);
