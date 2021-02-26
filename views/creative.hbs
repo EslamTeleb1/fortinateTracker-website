@@ -661,13 +661,13 @@
 <p class="trn-text--dimmed mb0">Share your creation with other players, vote on your favorite creations. Promote your creation by adding a custom image and description.</p>
 </div>
 <ul class="trn-tabs">
-<li class="trn-tabs__item trn-tabs__item--active"><a href="/creative?mode=hot">Hot</a></li>
-<li class="trn-tabs__item "><a href="/creative?mode=featured">Popular</a></li>
-<li class="trn-tabs__item "><a href="/creative?mode=new">New</a></li>
+<li class="trn-tabs__item trn-tabs__item--active"><a href="#">Featured Islands</a></li>
+
 </ul>
 </div>
 <div class="trn-scont trn-scont--swap">
 <div class="trn-scont__content">
+<!--
 <div class="trn-input">
 <label class="trn-input__label">Category</label>
 <select id="filter-category" name="category" class="trn-select trn-input-element" onchange="location.href = '/creative?mode=hot&category=' + document.getElementById('filter-category').value">
@@ -688,7 +688,7 @@
 <option value="blocks">The Block</option>
 <option value="warmup">Warm Up</option>
 </select>
-</div>
+</div>-->
 <div class="fc-map-list">
 <!--<div class="trn-card fc-map">
 <div class="trn-card__hero">
@@ -718,7 +718,7 @@
 </div>-->
 </div>
 <div class="trn-card__content" style="display: flex; justify-content: center;">
-<a href="/creative?mode=hot&page=2" class="trn-button trn-button--primary">Next</a>
+<a href="/creative" class="trn-button trn-button--primary">Creative Islands again :)</a>
 </div>
 </div>
 <aside class="trn-scont__aside">
@@ -728,9 +728,9 @@
 <span class="trn-card__header-subline"></span>
 </div>
 <div class="trn-card__content">
-<form onsubmit="event.preventDefault(); location.href = '/creative/' + document.getElementById('creationId').value + '?category=' + document.getElementById('category').value">
+<form <!--onsubmit="event.preventDefault(); location.href = '/creative/' + document.getElementById('creationId').value + '?category=' + document.getElementById('category').value"--></form>
 <input id="creationId" class="trn-text-input" placeholder="1234-1234-1234" style="font-size: 16px;" pattern="^\d{4}-\d{4}-\d{4}$" />
-<div class="trn-input" style="width:100%;">
+<!--<div class="trn-input" style="width:100%;">
 <label class="trn-input__label">Category</label>
 <select id="category" name="category" class="trn-select trn-input-element">
 <option value="adventure">Adventure</option>
@@ -749,8 +749,11 @@
 <option value="blocks">The Block</option>
 <option value="warmup">Warm Up</option>
 </select>
-</div>
-<button type="submit" class="trn-button trn-button--primary trn--block" style="margin-top: 12px; width: 100%;">Add Creation</button>
+</div>-->
+<br>
+<br>
+<span style="color: goldenrod;"> NEW !</span>
+<button type="submit" id="addCreation"" class="trn-button trn-button--primary trn--block" style="margin-top: 12px; width: 100%;">Add Creation </button>
 </form>
 </div>
 </div>

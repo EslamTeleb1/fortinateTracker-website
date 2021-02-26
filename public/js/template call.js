@@ -14,4 +14,7 @@ headers: {'Authorization': API_Key}})
    })
 
 
+}).catch((e)=>{
+    
+   console.log(e)
 })
